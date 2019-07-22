@@ -15,6 +15,12 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'jquery-rails'
+
+gem 'photoswipe-rails', '~> 4.1'
+gem 'cocoon'
+
+gem 'bootstrap', '~> 4.1.3'
 
 gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
 

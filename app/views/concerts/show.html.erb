@@ -1,15 +1,92 @@
 <div class="container">
 
-	<h1><%= @concert.city %> - <%= @concert.venue %></h1>
-	<hr>
-	<small><%= @concert.date %></small>
-	<%= link_to "Edit", edit_concert_path(@concert)  %>
 
-	<p><%= simple_format(@concert.content )%></p>
+		<h1><%= @concert.city %> - <%= @concert.venue %></h1>
+		<hr>
+		<small><%= @concert.date %></small>
+		<%= link_to "Edit", edit_concert_path(@concert)  %>
 
-	<% @concert.attachments.each do |img| %>
-		<%= image_tag img.url, class: "image_gallery" %>
+		<p><%= simple_format(@concert.content )%></p>
+
+
+	<div class="row">
+		<div class="col-md-10 offset-md-1 col-12 ">
+			<div id="concert_gallery">
+				<% @concert.attachments.each_with_index do | concert, index| %>
+					<%= render "images" , concert: concert , index: index %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+	<% if @concert.videos.any? %>
+		<div class="row">
+				<% @concert.videos.each do |video| %>
+					<div class="col-6 ">
+						<div class="youtube_frame">
+							<iframe allowfullscreen="" frameborder="0" height="360" width="460" src="<%= video.embed %>"></iframe>				
+						</div>
+					</div>
+				<% end %>
+		</div>
 	<% end %>
-
-
 </div>
+
+	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+		<div class="pswp__bg"></div>
+
+		<div class="pswp__scroll-wrap">
+
+			<div class="pswp__container">
+				<div class="pswp__item">
+				</div>
+				<div class="pswp__item">
+				</div>
+				<div class="pswp__item">
+				</div>
+			</div>
+
+
+			<div class="pswp__ui pswp__ui--hidden">
+
+				<div class="pswp__top-bar">
+
+					<div class="pswp__counter"></div>
+
+					<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+					<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+					<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+					<div class="pswp__preloader">
+						<div class="pswp__preloader__icn">
+							<div class="pswp__preloader__cut">
+								<div class="pswp__preloader__donut"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+					<div class="pswp__share-tooltip"></div> 
+				</div>
+
+				<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+				<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+				<div class="pswp__caption">
+					<div class="pswp__caption__center">
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+

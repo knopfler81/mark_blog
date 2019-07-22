@@ -11,6 +11,7 @@ class ConcertsController < ApplicationController
 
   def new
     @concert = Concert.new
+    @video   = Video.new
   end
 
   def create
@@ -27,6 +28,7 @@ class ConcertsController < ApplicationController
   end
 
   def edit
+    @video  = Video.new
   end
 
   def update
@@ -45,7 +47,16 @@ class ConcertsController < ApplicationController
   private
 
   def concert_params
-    params.require(:concert).permit(:title, :content , :city, :venue, :date, {attachments: []}, :tour_id)
+    params.require(:concert).permit(
+        :title, 
+        :content, 
+        :city, 
+        :venue, 
+        :date, 
+        :tour_id,
+        {attachments: []}, 
+        videos_attributes: [:url,:id, :_destroy], 
+      )
   end
 
   def find_concert 
