@@ -10,7 +10,11 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <%= link_to "Concerts", tours_path, class: "nav-link" %>
       <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <%= link_to "NEW", new_concert_path, class: "nav-link" %>
+        <% end %>
         <li class="nav-item active">
           <%= link_to "Home", "#", class: "nav-link" %>
         </li>

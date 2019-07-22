@@ -1,0 +1,15 @@
+<div class="container">
+
+	<h1><%= @concert.city %> - <%= @concert.venue %></h1>
+	<hr>
+	<small><%= @concert.date %></small>
+	<%= link_to "Edit", edit_concert_path(@concert)  %>
+
+	<p><%= simple_format(@concert.content )%></p>
+
+	<% @concert.attachments.each do |img| %>
+		<%= image_tag img.url, class: "image_gallery" %>
+	<% end %>
+
+
+</div>
