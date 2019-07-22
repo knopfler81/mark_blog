@@ -1,0 +1,7 @@
+<div class="container">
+	<% @tours.each do |tour| %>
+		<%= link_to  tour_path(tour) do %>
+			<li><%= tour.title %> - <%= tour.year %> </li>
+		<% end %>
+	<% end %>
+</div>

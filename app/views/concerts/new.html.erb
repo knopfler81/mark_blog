@@ -1,0 +1,40 @@
+<div class="container">
+	<%= simple_form_for(@concert) do |f| %>
+		<div class="row">
+			<div class="col-6">
+				<%= f.input :tour_id, collection: Tour.all.collect {|t| [t.title, t.id]}, label: false, prompt: "Tour", required: true %>
+			</div>
+			<div class="col-6">
+				<%= f.input :date, label: false, placeholder: "Date du concert", required: true %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<%= f.input :city, label: false, placeholder: "Ville du concert", required: true %>
+			</div>
+			<div class="col-6">
+				<%= f.input :venue, label: false, placeholder: "Lieu du concert", required: true %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<%= f.input :content, label: false, placeholder: "Résumé du concert", input_html: {rows: 5} %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<%= f.file_field :attachments, multiple: true %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-10 offset-1">
+				<br>
+				<br>
+				<br>
+				<%= f.submit "Valider", class: "btn btn-success btn-block" %>
+			</div>
+		</div>
+	<% end %>
+
+</div>
