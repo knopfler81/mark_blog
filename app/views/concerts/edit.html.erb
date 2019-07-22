@@ -28,30 +28,28 @@
 			</div>
 		</div>
 		
+<div class="row">
+ 			<div class="col-4">
+ 				<br>
+	 			<div id="videos">
+	 			  <%= f.simple_fields_for :videos do |video| %>
+	 		      <%= render "video_fields", f: video %>
+	 		    <% end %>
+	 		   	<div class="links">
+	 		     	<%= link_to_add_association "Ajouter une vidéo", f, :videos, partial: "video_fields", class: "btn btn-secondary btn-block" %>
+	 		   	</div>
+	 			</div>
+ 			</div>
+ 		</div>
+ 	
+
 		<div class="row">
-			<div class="col-4">
-				<br><br>
-					<div id="videos">
-					  <%= f.simple_fields_for :videos do |video| %>
-				      <%= render "video_fields", f: video %>
-				    <% end %>
-				   	<div class="links">
-				     	<%= link_to_add_association "Ajouter une vidéo", f, :videos, partial: "video_fields", class: "btn btn-secondary btn-block" %>
-				   	</div>
-					</div>
+			<div class="col-12">
+				<br>
+				<br>
+				<br>
+				<%= f.submit "Valider la modification", class: "btn btn-success btn-block" %>
 			</div>
 		</div>
-
-
-
-		<div class="row">
-					<div class="col-12">
-						<br>
-						<br>
-						<br>
-						<%= f.submit "Valider la modification" , class: "btn btn-success btn-block" %>
-					</div>
-				</div>
 	<% end %>
-
 </div>
