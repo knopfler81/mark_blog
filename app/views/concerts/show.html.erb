@@ -1,13 +1,13 @@
 <div class="container">
 
-	<div class="row">
+
 		<h1><%= @concert.city %> - <%= @concert.venue %></h1>
 		<hr>
 		<small><%= @concert.date %></small>
 		<%= link_to "Edit", edit_concert_path(@concert)  %>
 
 		<p><%= simple_format(@concert.content )%></p>
-	</div>
+
 
 	<div class="row">
 		<div class="col-md-10 offset-md-1 col-12 ">
@@ -18,6 +18,18 @@
 			</div>
 		</div>
 	</div>
+
+	<% if @concert.videos.any? %>
+		<div class="row">
+				<% @concert.videos.each do |video| %>
+					<div class="col-6 ">
+						<div class="youtube_frame">
+							<iframe allowfullscreen="" frameborder="0" height="360" width="460" src="<%= video.embed %>"></iframe>				
+						</div>
+					</div>
+				<% end %>
+		</div>
+	<% end %>
 </div>
 
 	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
