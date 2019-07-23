@@ -1,0 +1,8 @@
+<div class="container">
+	<% @calendars.each do |calendar| %>
+		<%= link_to  calendar_path(calendar) do %>
+			<%= image_tag(calendar.images.first.url, class: "small_image") %>
+			<li class="list-unstyled"><%= calendar.year %> </li>
+		<% end %>
+	<% end %>
+</div>

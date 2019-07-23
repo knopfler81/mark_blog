@@ -12,7 +12,7 @@
     <ul class="navbar-nav mr-auto">
       <%= link_to "Home", tours_path, class: "nav-link" %>
       <%= link_to "Concerts", tours_path, class: "nav-link" %>
-      <%= link_to "Calendars", tours_path, class: "nav-link" %>
+      <%= link_to "Calendars", calendars_path, class: "nav-link" %>
       <%= link_to "Other Events", events_path, class: "nav-link" %>
       <% if user_signed_in? %>
          
@@ -25,7 +25,7 @@
             <%= link_to "Ajouter une tournée", new_tour_path, class: "dropdown-item" %>
             <%= link_to "Ajouter un concert", new_concert_path, class: "dropdown-item" %>
             <%= link_to "Ajouter un évenement", new_event_path, class: "dropdown-item" %>
-            <%= link_to "Ajouter un calendrier", "#", class: "dropdown-item" %>
+            <%= link_to "Ajouter un calendrier", new_calendar_path, class: "dropdown-item" %>
           </div>
         </li>
         <% end %>

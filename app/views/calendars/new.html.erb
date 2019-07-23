@@ -1,0 +1,31 @@
+<% if current_user.admin? %>
+	<div class="container">
+		<%= simple_form_for(@calendar) do |f| %>
+			<div class="row">
+				<div class="col-6">
+					<%= f.input :year,  label: false, placeholder: "Année" %>
+				</div>
+				<div class="col-6">
+					<%= f.input :link,  label: false, placeholder: "Lien de téléchargement" %>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-12">
+					<%= f.file_field :images, multiple: true %>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-12">
+					<br>
+					<br>
+					<br>
+					<%= f.submit "Valider", class: "btn btn-success btn-block" %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+<% else %>
+	<p>Naaaa pas le droit !! </p>
+<% end %>
