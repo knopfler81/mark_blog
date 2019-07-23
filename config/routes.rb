@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: 'concerts#index'
 	
 	resources :tours   
-	resources :concerts   
+	resources :concerts  
+	resources :events 
 end

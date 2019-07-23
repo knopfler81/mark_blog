@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="col-12">
+		<%= simple_form_for(@tour, url: tour_path(@tour)) do |f| %>
+			<%= f.input :title, label: false, placeholder: "Nom de la tournée" %>
+			<%= f.input :year, label: false, placeholder: "Année de la tournée" %>
+			<%= f.file_field :cover_tour %>
+			<br>	<br>
+			<%= f.submit "Modifier", class: "btn btn-primary" %>
+
+		<% end %>
+				
+
+		  
+	</div>
+</div>
