@@ -1,7 +1,7 @@
 <div class="container">
 	<% @concerts.each do |concert| %>
 		<%= link_to  concert_path(concert) do %>
-			<li><%= concert.city %> - <%= concert.date %> </li>
+			<li class="list-unstyled"><%= concert.city %> - <%= concert.date %> </li>
 		<% end %>
 	<% end %>
 </div>

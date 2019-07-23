@@ -1,6 +1,8 @@
 <div class="container">
 	<% @tour.concerts.each do |concert| %>
-		<li><%= concert.city %> - <%= concert.date %></li>
+		<%= link_to concert_path(concert) do %>
+			<li class="list-unstyled"><%= concert.city %> - <%= concert.date %></li>
+		<% end %>
 	<% end %>
 
 	<%= link_to "Ajouter un concert", new_concert_path, class: "btn btn-primary"  %>
