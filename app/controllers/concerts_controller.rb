@@ -1,6 +1,7 @@
 class ConcertsController < ApplicationController
 
   before_action :find_concert, only: [ :show, :edit, :update, :destroy]
+  before_action :authenticate_user! , only: [ :edit, :destroy, :update, :create]
 
   def index
     @concerts = Concert.all

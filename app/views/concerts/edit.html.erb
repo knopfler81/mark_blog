@@ -1,55 +1,59 @@
-<div class="container">
-	EDIT:
-	<%= simple_form_for(@concert, url: concert_path(@concert)) do |f| %>
-		<div class="row">
-			<div class="col-6">
-				<%= f.input :tour_id, collection: Tour.all.collect {|t| [t.title, t.id]}, label: false, prompt: "Tour" %>
+<% if current_user.admin? %>
+	<div class="container">
+		EDIT:
+		<%= simple_form_for(@concert, url: concert_path(@concert)) do |f| %>
+			<div class="row">
+				<div class="col-6">
+					<%= f.input :tour_id, collection: Tour.all.collect {|t| [t.title, t.id]}, label: false, prompt: "Tour" %>
+				</div>
+				<div class="col-6">
+					<%= f.input :date, label: false, placeholder: "Date du concert" %>
+				</div>
 			</div>
-			<div class="col-6">
-				<%= f.input :date, label: false, placeholder: "Date du concert" %>
+			<div class="row">
+				<div class="col-6">
+					<%= f.input :city, label: false, placeholder: "Ville du concert" %>
+				</div>
+				<div class="col-6">
+					<%= f.input :venue, label: false, placeholder: "Lieu du concert" %>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-6">
-				<%= f.input :city, label: false, placeholder: "Ville du concert" %>
+			<div class="row">
+				<div class="col-12">
+					<%= f.input :content, label: false, placeholder: "Résumé du concert", input_html: {rows: 5} %>
+				</div>
 			</div>
-			<div class="col-6">
-				<%= f.input :venue, label: false, placeholder: "Lieu du concert" %>
+			<div class="row">
+				<div class="col-12">
+					<%= f.file_field :attachments, multiple: true %>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<%= f.input :content, label: false, placeholder: "Résumé du concert", input_html: {rows: 5} %>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<%= f.file_field :attachments, multiple: true %>
-			</div>
-		</div>
-		
-<div class="row">
- 			<div class="col-4">
- 				<br>
-	 			<div id="videos">
-	 			  <%= f.simple_fields_for :videos do |video| %>
-	 		      <%= render "video_fields", f: video %>
-	 		    <% end %>
-	 		   	<div class="links">
-	 		     	<%= link_to_add_association "Ajouter une vidéo", f, :videos, partial: "video_fields", class: "btn btn-secondary btn-block" %>
-	 		   	</div>
+			
+	<div class="row">
+	 			<div class="col-4">
+	 				<br>
+		 			<div id="videos">
+		 			  <%= f.simple_fields_for :videos do |video| %>
+		 		      <%= render "video_fields", f: video %>
+		 		    <% end %>
+		 		   	<div class="links">
+		 		     	<%= link_to_add_association "Ajouter une vidéo", f, :videos, partial: "video_fields", class: "btn btn-secondary btn-block" %>
+		 		   	</div>
+		 			</div>
 	 			</div>
- 			</div>
- 		</div>
- 	
+	 		</div>
+	 	
 
-		<div class="row">
-			<div class="col-12">
-				<br>
-				<br>
-				<br>
-				<%= f.submit "Valider la modification", class: "btn btn-success btn-block" %>
+			<div class="row">
+				<div class="col-12">
+					<br>
+					<br>
+					<br>
+					<%= f.submit "Valider la modification", class: "btn btn-success btn-block" %>
+				</div>
 			</div>
-		</div>
-	<% end %>
-</div>
+		<% end %>
+	</div>
+<% else %>
+	<p>Naaaa pas le droit !! </p>
+<% end %>

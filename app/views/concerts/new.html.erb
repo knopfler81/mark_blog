@@ -1,3 +1,4 @@
+<% if current_user.admin? %>
 <div class="container">
 	<%= simple_form_for(@concert) do |f| %>
 		<div class="row">
@@ -55,3 +56,7 @@
 	<% end %>
 
 </div>
+
+<% else %>
+	<p>Naaaa pas le droit !! </p>
+<% end %>

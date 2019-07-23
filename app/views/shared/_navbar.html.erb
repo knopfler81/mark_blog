@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    MK
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,24 +10,27 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <%= link_to "Home", tours_path, class: "nav-link" %>
       <%= link_to "Concerts", tours_path, class: "nav-link" %>
+      <%= link_to "Calendars", tours_path, class: "nav-link" %>
+      <%= link_to "Other Events", tours_path, class: "nav-link" %>
       <% if user_signed_in? %>
+         
+
         <% if current_user.admin? %>
-          <%= link_to "NEW", new_concert_path, class: "nav-link" %>
-        <% end %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
-        </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Admin</a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "Ajouter une tournée", new_tour_path, class: "dropdown-item" %>
+            <%= link_to "Ajouter un concert", new_concert_path, class: "dropdown-item" %>
+            <%= link_to "Ajouter un évenement", "#", class: "dropdown-item" %>
+            <%= link_to "Ajouter un calendrier", "#", class: "dropdown-item" %>
           </div>
+        </li>
+        <% end %>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
       <% else %>
         <li class="nav-item">
