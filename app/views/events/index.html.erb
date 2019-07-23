@@ -1,0 +1,7 @@
+<div class="container">
+	<% @events.each do |event| %>
+		<%= link_to  event_path(event) do %>
+			<li class="list-unstyled"><%= event.title %> - <%= event.date %> </li>
+		<% end %>
+	<% end %>
+</div>

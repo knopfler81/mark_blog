@@ -1,4 +1,6 @@
 class ToursController < ApplicationController
+
+	before_action :find_tour, only: [:show, :edit, :update, :destroy]
   def index
     @tours = Tour.all
   end
@@ -24,6 +26,10 @@ class ToursController < ApplicationController
     end
   end
 
+
+  def edit
+  end
+
   def update
     if @tour.update(tour_params)
       redirect_to @tour, notice: "Tour was successfully updated"
@@ -41,5 +47,9 @@ class ToursController < ApplicationController
 
   def tour_params
     params.require(:tour).permit(:title, :year, :cover_tour)
+  end
+
+  def find_tour
+  	@tour = Tour.find(params[:id])
   end
 end

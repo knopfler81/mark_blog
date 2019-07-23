@@ -1,0 +1,40 @@
+<% if current_user.admin? %>
+<div class="container">
+	<%= simple_form_for(@event) do |f| %>
+		<div class="row">
+			<div class="col-4">
+			  <%= f.input :title, label: false, placeholder: "Titre de l'évènement", required: true %>
+			</div>
+			<div class="col-4">
+				<%= f.input :venue, label: false, placeholder: "Lieu de l'évènement", required: true %>
+			</div>
+			<div class="col-4">
+				<%= f.input :date, label: false, placeholder: "Date de l'évènement", required: true %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<%= f.input :content, label: false, placeholder: "Résumé de l'évènement", input_html: {rows: 5} %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<%= f.file_field :pictures, multiple: true %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				<br>
+				<br>
+				<br>
+				<%= f.submit "Valider", class: "btn btn-success btn-block" %>
+			</div>
+		</div>
+	<% end %>
+
+</div>
+
+<% else %>
+	<p>Naaaa pas le droit !! </p>
+<% end %>
