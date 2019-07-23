@@ -12,10 +12,10 @@ class ToursController < ApplicationController
   end
 
   def create
-    @tour = Tour.new(tour_params)
+    @tour = Tour.create!(tour_params)
     respond_to do |format|
       if @tour.save
-        format.html { redirect_to @tour, notice: 'Tour was successfully created.' }
+        format.html { redirect_to tours_path, notice: 'Tour was successfully created.' }
         format.json { render :show, status: :created, location: @tour }
       else
         format.html { render :new , notice: 'Wooops something went wrong'}
@@ -40,6 +40,6 @@ class ToursController < ApplicationController
   private
 
   def tour_params
-    params.require(:tour).permit(:title, :year)
+    params.require(:tour).permit(:title, :year, :cover_tour)
   end
 end

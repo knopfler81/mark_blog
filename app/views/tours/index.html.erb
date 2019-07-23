@@ -1,7 +1,14 @@
 <div class="container">
-	<% @tours.each do |tour| %>
-		<%= link_to  tour_path(tour) do %>
-			<li><%= tour.title %> - <%= tour.year %> </li>
+	<div class="row">
+		
+		<% @tours.each do |tour| %>
+			<div class="col-12 col-md-3">
+				<%= link_to  tour_path(tour) do %>
+					<%= image_tag(tour.cover_tour.url, class: "cover_tour_img")%>
+					<li class="list-unstyled"><%= tour.title %> - <%= tour.year %> </li>
+				<% end %>
+			</div>
+
 		<% end %>
-	<% end %>
+	</div>
 </div>
