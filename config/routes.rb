@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 	resources :tours   
 	resources :concerts  
 	resources :events 
+	resources :calendars
 end
