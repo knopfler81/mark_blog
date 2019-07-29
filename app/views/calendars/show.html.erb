@@ -4,7 +4,7 @@
 		<h1><%= @calendar.year %></h1>
 		<hr>
 		
-		<%= link_to "Edit", edit_calendar_path(@calendar)  %>
+		<%= link_to "Edit", edit_calendar_path(@calendar) if !current_user.nil? && current_user.admin?  %>
 
 		<%= link_to "Télécharger", @calendar.link, class: "btn btn-success", target: "_blank"  %>
 

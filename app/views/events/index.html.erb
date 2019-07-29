@@ -1,7 +1,20 @@
 <div class="container">
-	<% @events.each do |event| %>
-		<%= link_to  event_path(event) do %>
-			<li class="list-unstyled"><%= event.title %> - <%= event.date %> </li>
+	<div class="row">
+		<% @events.each do |event| %>
+			<div class="col-4">
+				<%= link_to  event_path(event) do %>
+					<div class="hvrbox">
+						<%= image_tag(event.pictures.first.url,  class: "hvrbox-layer_bottom" )%>
+						<div class="hvrbox-layer_top hvrbox-layer_slideright">
+							<div class="hvrbox-text">
+								<h3><%= event.title %></h3>
+								<p><%= event.date %></p>
+							</div>
+						</div>
+					<% end %>
+					</div>
+			</div>
 		<% end %>
-	<% end %>
+	</div>
 </div>
+

@@ -4,7 +4,7 @@
 		<h1><%= @concert.city %> - <%= @concert.venue %></h1>
 		<hr>
 		<small><%= @concert.date %></small>
-		<%= link_to "Edit", edit_concert_path(@concert)  %>
+		<%= link_to "Edit", edit_concert_path(@concert) if !current_user.nil? && current_user.admin? %>
 
 		<p><%= simple_format(@concert.content )%></p>
 

@@ -13,6 +13,15 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [280, 280]
   end
 
+  process :right_orientation
+
+  def right_orientation
+    manipulate! do |img|
+      img.auto_orient
+      img
+    end
+  end
+
   def default_url(*args)
     "/images/fallback/" + [version_name, "random.jpg"].compact.join('_')
   end

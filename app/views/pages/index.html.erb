@@ -1,0 +1,99 @@
+<div class="container">
+	<div class="section">
+		<h1 class="text-center title-dark">Mark In Summer Long Ago</h1>
+		<br><br>
+		<div class="row">
+			<div class="col-12 col-md-7">
+				<p>...refers to the very first time I saw Mark Knopfler on stage, the 9th July 1996 and to his wonderful song, A Night In Summer Long Ago that I used to listen with my dearly loved grand mother. This website is to share with all the fans my passion of Mark Knopfler's music. Reviews and pictures from the concerts I've attended and also about my meetings with the Man ! I hope You'll enjoy.</p>
+			</div>
+			<div class="col-12 col-md-5">
+				<%= image_tag("mains/band.png", class:'band') %>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<h1 class="title-dark">MK & me... somehow...</h1>
+		<hr>
+		<div class="row">
+			<div class="col-12 col-md-4">
+				<div class="make-it-slow">
+					<%= link_to tours_path do %>
+						<div class="thumbnail">
+							<%= image_tag("mains/concerts.jpg", class:"category") %>
+							<h3 class="section-title">Concerts</h3> 
+						</div>
+					<% end %>
+				</div>
+			</div>
+			<div class="col-12 col-md-4">
+				<div class="make-it-slow">
+					<%= link_to calendars_path do %>
+						<div class="thumbnail">
+							<%= image_tag("mains/calendars.jpg", class:"category") %>
+							<h3 class="section-title">Calendars</h3> 
+						</div>
+					<% end %>
+				</div>
+			</div>
+			<div class="col-12 col-md-4">
+				<div class="make-it-slow">
+					<%= link_to events_path do %>
+						<div class="thumbnail">
+							<%= image_tag("mains/events.jpg", class:"category") %>
+							<h3 class="section-title">Other Events</h3> 
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<h1 class="title-dark">MK related websites</h1>
+		<hr>
+		<div class="row">
+			<div class="col-xs-12 col-sm-4 col-md-4 under-section">
+        <div class="make-it-slow">
+          <%= link_to "http://www.markknopfler.com/", target:'_blank' do %>
+            <div class="thumbnail">
+              <%= image_tag("mains/mkcom.jpg", class:"category")%>
+              <h3 class="section-title">
+              	Official MK Website
+              </h3> 
+              <p class="section-description">
+              MK.co <br>
+              Visit the very official MK website, tour dates, shop, annoucements...</p> 
+            	
+            </div>
+          <% end %>
+        </div>
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4 under-section">
+        <div class="make-it-slow">
+          <%= link_to "http://www.guyfketcher.co.uk/", target:'_blank' do %>
+            <div class="thumbnail">
+              <%= image_tag("mains/gf.jpg", class:"category")%>
+              <h3 class="section-title">
+              	Guy Fletcher
+              </h3> 
+              <p class="section-description">A very intersting Website to keep in your favorites. </br>Guy Fletcher runs here a forum, studio and tour diaries ! Have a look !</p> 
+            </div>
+          <% end %>
+        </div>
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4 under-section">
+        <div class="make-it-slow">
+          <%= link_to "http://www.amarkintime.org/forum/", target:'_blank' do %>
+            <div class="thumbnail">
+              <%= image_tag("mains/forum.jpg", class:"category")%>
+              <h3 class="section-title">
+              	AMIT forum
+              </h3> 
+              <p class="section-description"> A very nice place to exchange with fans from all over the world! This a non official forum. </br>Be cool and do not moan !</p> 
+            </div>
+          <% end %>
+        </div>
+			</div>
+		</div>
+	</div>
+
+</div>
