@@ -17,7 +17,7 @@ openGallery.forEach(function(image){
     // build items array
     var items = []
 
-    pics.forEach(function(e){items.push({src: e.src, w: 0, h: 0}); })
+    pics.forEach(function(e){items.push({src: e.src, w: 0, h: 0,  rotation:3}); })
     
     // define options (if needed)
     var options = {
@@ -29,6 +29,7 @@ openGallery.forEach(function(image){
         hideAnimationDuration: 0,
         closeOnScroll: false,
         closeOnClick: false,
+        correctOrientation: true
         
     };
     

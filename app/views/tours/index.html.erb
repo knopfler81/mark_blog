@@ -1,14 +1,20 @@
 <div class="container">
 	<div class="row">
-		
 		<% @tours.each do |tour| %>
-			<div class="col-12 col-md-3">
+			<div class="col-4">
 				<%= link_to  tour_path(tour) do %>
-					<%= image_tag(tour.cover_tour.url, class: "cover_tour_img")%>
-					<li class="list-unstyled"><%= tour.title %> - <%= tour.year %> </li>
-				<% end %>
+					<div class="hvrbox">
+						<%= image_tag(tour.cover_tour.url,  class: "hvrbox-layer_bottom" )%>
+						<div class="hvrbox-layer_top hvrbox-layer_slideright">
+							<div class="hvrbox-text">
+								<h3><%= tour.title %></h3>
+								<p><%= tour.year %></p>
+							</div>
+						</div>
+					<% end %>
+					</div>
 			</div>
-
 		<% end %>
 	</div>
 </div>
+

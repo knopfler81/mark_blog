@@ -1,0 +1,33 @@
+/* line 1, /Users/nellyduclos/Desktop/ROR/mk_project/app/assets/stylesheets/custom.sass */
+.band {
+  width: 100%;
+}
+
+/* line 4, /Users/nellyduclos/Desktop/ROR/mk_project/app/assets/stylesheets/custom.sass */
+.category {
+  width: 100%;
+}
+
+/* line 7, /Users/nellyduclos/Desktop/ROR/mk_project/app/assets/stylesheets/custom.sass */
+.tours-content {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 13, /Users/nellyduclos/Desktop/ROR/mk_project/app/assets/stylesheets/custom.sass */
+.tours {
+  padding: 0px;
+  margin: 0px;
+  width: 250px;
+}
+/* line 17, /Users/nellyduclos/Desktop/ROR/mk_project/app/assets/stylesheets/custom.sass */
+.tours:hover {
+  width: 255px;
+}
+
+/* line 20, /Users/nellyduclos/Desktop/ROR/mk_project/app/assets/stylesheets/custom.sass */
+.burger {
+  color: white !important;
+}

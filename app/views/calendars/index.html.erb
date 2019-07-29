@@ -1,8 +1,42 @@
 <div class="container">
-	<% @calendars.each do |calendar| %>
-		<%= link_to  calendar_path(calendar) do %>
-			<%= image_tag(calendar.images.first.url, class: "small_image") %>
-			<li class="list-unstyled"><%= calendar.year %> </li>
+	<h1>Calendards</h1>
+	<hr>
+		<div class="row">
+			<div class="col-12">
+				<p>Every years since 2006 I used to create a free MK Calendar for fans enjoyment only.
+				<p>2015 and 2016 were a little bit different. I had decided to use my MK calendars to help raise funds for charity.</p>
+				<p>The Calendars are still free, but I would be delighted if you would like to make a donation to this, which is a cause dear to my heart. So please donate anything you can afford, it all helps.
+				</p>
+				<p>I did this because, I want to help research for Neurofibromatosis diseases, of which type 1 is also known as Von Recklinghausen disease.</p>
+				 <p>Below you will find the direct link to the foundation.
+				A.N.R means Foundation Neurofibromatosis & Recklinghausen. For more information about the disease click here.
+				You can use Paypal, or credit card (with the paypal link below).  Please don’t forget to mention A.N.R-MKCalendar2016 and your country with your payement. (If you need receipt, mention your email address too)  .</p>
+				<p>The payments directly go to the A.N.R fundation, I don't get ANY benefit!</p>
+			</div>
+		</div>
+	  <div class="row">
+	  	<div class="col-12 col-md-4 offset-md-4">
+	  	  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+	  	    <input type="hidden" name="cmd" value="_s-xclick">
+	  	   <input type="hidden" name="hosted_button_id" value="RG6X4YMUPQLJE">
+	  	    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+	  	</div>     
+	  </div>  
+		<div class="row">
+		<% @calendars.each do |calendar| %>
+			<div class="col-4">
+				<%= link_to  calendar_path(calendar) do %>
+					<div class="hvrbox">
+						<%= image_tag(calendar.images.first.url,  class: "hvrbox-layer_bottom" )%>
+						<div class="hvrbox-layer_top hvrbox-layer_slideright">
+							<div class="hvrbox-text">
+								<h3>Calendard <%= calendar.year %></h3>
+								
+							</div>
+						</div>
+					<% end %>
+					</div>
+			</div>
 		<% end %>
-	<% end %>
+	</div>
 </div>
