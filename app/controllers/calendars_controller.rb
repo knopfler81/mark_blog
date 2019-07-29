@@ -4,7 +4,7 @@ class CalendarsController < ApplicationController
   before_action :authenticate_user! , only: [ :edit, :destroy, :update, :create]
 
   def index
-    @calendars = Calendar.all
+    @calendars = Calendar.order('created_at DESC').all
   end
 
   def show

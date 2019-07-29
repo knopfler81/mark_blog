@@ -4,7 +4,7 @@ class ConcertsController < ApplicationController
   before_action :authenticate_user! , only: [ :edit, :destroy, :update, :create]
 
   def index
-    @concerts = Concert.all
+    @concerts = Concert.order('created_at DESC').all
   end
 
   def show
