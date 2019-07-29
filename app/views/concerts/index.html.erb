@@ -4,7 +4,7 @@
 			<div class="col-4">
 				<%= link_to  concert_path(concert) do %>
 					<div class="hvrbox">
-						<%= image_tag(concert.pictures.first.url,  class: "hvrbox-layer_bottom" )%>
+						<%= image_tag(concert.attachments.first.url,  class: "hvrbox-layer_bottom" )%>
 						<div class="hvrbox-layer_top hvrbox-layer_slideright">
 							<div class="hvrbox-text">
 								<h3><%= concert.city %></h3>
