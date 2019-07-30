@@ -1,7 +1,23 @@
 <div class="container">
-		<h1><%= @event.title %> - <%= @event.venue %></h1>
-		<hr>
-		<small><%= @event.date %></small>
+	<div class="row">
+		
+	  <div class="col-md-9">
+	  	
+	    <div class="row review-title">
+	      <div class="col-md-offset-1 col-md-2 col-hidden-sm col-hidden-xs">
+	        <%= image_tag(@event.pictures.first.url, title: @event.venue, class:'circle-title') %>
+	      	
+	      </div>
+	      <div class="col-md-8 col-xs-12">
+	        <h2 class="text-primary concert-title"><%= @event.venue %></h2>
+	        <h4 class="concert-date"><%= @event.date %></h4>
+	      	
+	      </div>
+	    	
+	    </div>
+	  </div>
+	</div>
+
 		<%= link_to "Edit", edit_event_path(@event) if !current_user.nil? && current_user.admin?  %>
 
 		<p><%= simple_format(@event.content )%></p>

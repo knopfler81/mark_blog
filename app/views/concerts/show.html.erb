@@ -1,9 +1,26 @@
 <div class="container">
 
+	<div class="row">
+		
+	  <div class="col-md-9">
+	  	
+	    <div class="row review-title">
+	      <div class="col-md-offset-1 col-md-2 col-hidden-sm col-hidden-xs">
+	        <%=image_tag(@concert.attachments.first.url, title: @concert.venue, class:'circle-title') %>
+	      	
+	      </div>
+	      <div class="col-md-8 col-xs-12">
+	        <h2 class="text-primary concert-title"><%= @concert.city %></h2>
+	        <h4 class="concert-date"><%= @concert.date %></h4>
+	      	
+	      </div>
+	    	
+	    </div>
+	  </div>
+	</div>
 
-		<h1><%= @concert.city %> - <%= @concert.venue %></h1>
-		<hr>
-		<small><%= @concert.date %></small>
+<hr>
+		
 		<%= link_to "Edit", edit_concert_path(@concert) if !current_user.nil? && current_user.admin? %>
 
 		<p><%= simple_format(@concert.content )%></p>
