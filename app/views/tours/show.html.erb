@@ -3,7 +3,8 @@
 	<br><br>
 	<div class="row">
 		<% @tour.concerts.each do |concert| %>
-			<div class="col-4">
+			<div class="col-6 col-md-4">
+				HEY
 				<%= link_to  concert_path(concert) do %>
 					<div class="hvrbox">
 						<%= image_tag(concert.attachments.first.url,  class: "hvrbox-layer_bottom" )%>

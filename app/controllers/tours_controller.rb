@@ -2,7 +2,7 @@ class ToursController < ApplicationController
 
 	before_action :find_tour, only: [:show, :edit, :update, :destroy]
   def index
-    @tours = Tour.order('created_at DESC').all
+    @tours =  Tour.all.order(year: :desc)
   end
 
   def show

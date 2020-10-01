@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<% @tours.each do |tour| %>
-			<div class="col-4">
+			<div class="col-6 col-md-4">
 				<%= link_to  tour_path(tour) do %>
 					<div class="hvrbox">
 						<%= image_tag(tour.cover_tour.url,  class: "hvrbox-layer_bottom" )%>
