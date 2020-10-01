@@ -19,6 +19,8 @@
 	  </div>
 	</div>
 
+
+
 <hr>
 		
 		<%= link_to "Edit", edit_concert_path(@concert) if !current_user.nil? && current_user.admin? %>
@@ -37,11 +39,13 @@
 	</div>
 
 	<% if @concert.videos.any? %>
+	<hr>
+	<br>
 		<div class="row">
 				<% @concert.videos.each do |video| %>
-					<div class="col-6 ">
+					<div class="col-xs-12 col-md-6">
 						<div class="youtube_frame">
-							<iframe allowfullscreen="" frameborder="0" height="360" width="460" src="<%= video.embed %>"></iframe>				
+							<iframe allowfullscreen="" frameborder="0" height="260" width="430" src="<%= video.embed %>"></iframe>				
 						</div>
 					</div>
 				<% end %>
